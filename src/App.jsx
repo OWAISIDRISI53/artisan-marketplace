@@ -15,7 +15,7 @@ function App() {
         <Route exact path="/" Component={HomePage} />
         <Route path="/products" Component={Products} />
         <Route path="/pricing" Component={Pricing} />
-        <Route path="https://artisan-marketplace.netlify.app/contact" Component={Contact} />
+        <Route path="/contact" Component={Contact} />
         <Route path="/signup" Component={Signup} />
       </Routes>
     </Router>
