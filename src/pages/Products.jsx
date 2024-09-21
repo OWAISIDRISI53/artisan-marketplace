@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
+import { useCart } from "../CartContext";
+import Alert from "../components/Alert";
 
 const Products = () => {
+  const [showAlert, setShowAlert] = useState(false);
+  const [productName, setProductName] = useState("");
+  const { addToCart } = useCart();
   const [products, setProducts] = useState([]);
 
-  // Fetch products from JSON file
   useEffect(() => {
     fetch("/products.json")
       .then((response) => response.json())
@@ -15,8 +19,28 @@ const Products = () => {
     return `https://picsum.photos/200/300?random=${id}`;
   };
 
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    setProductName(product.name);
+    alert_Show();
+  };
+
+  const alert_Show = () => {
+    setShowAlert(true);
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 2000);
+  };
+
   return (
     <div className="bg-gray-100 py-12">
+      {showAlert && (
+        <Alert
+          type="success"
+          alertText={` ${productName} is added to the cart`}
+        />
+      )}
+
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
           Our Products
@@ -36,7 +60,10 @@ const Products = () => {
               <p className="text-blue-600 font-bold text-xl mt-4">
                 {product.price}
               </p>
-              <button className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+              <button
+                className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+                onClick={() => handleAddToCart(product)} // Call addToCart here
+              >
                 Add to Cart
               </button>
             </div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,11 +14,11 @@ const Navbar = () => {
   };
 
   return (
-    <div>
-      <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+    <>
+      <nav className="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 sticky top-0 z-50 shadow">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <img
@@ -28,7 +29,7 @@ const Navbar = () => {
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
               Artisan
             </span>
-          </a>
+          </Link>
           <button
             data-collapse-toggle="navbar-dropdown"
             type="button"
@@ -57,18 +58,18 @@ const Navbar = () => {
           <div
             className={`${
               isOpen ? "block" : "hidden"
-            } w-full md:block md:w-auto`}
+            } w-full md:block md:w-auto relative`}
             id="navbar-dropdown"
           >
-            <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="flex flex-col md:flex-row md:justify-center font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:items-center md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
                   aria-current="page"
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
                 <button
@@ -135,34 +136,70 @@ const Navbar = () => {
                 </div>
               </li>
               <li>
-                <a
-                  href="/products"
+                <Link
+                  to="/products"
                   className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Products
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/pricing"
+                <Link
+                  to="/pricing"
                   className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Pricing
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Contact
-                </a>
+                </Link>
+              </li>
+
+              {/* addTOCart for mobile */}
+              <li className="flex md:hidden">
+                <Link
+                  to="/cart"
+                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >
+                  <i className="fas fa-shopping-cart"></i>
+                  <span className="mx-1">Cart</span>
+                </Link>
+                <Link
+                  to="/account"
+                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >
+                  <i className="fas fa-user"></i>
+                  <span className="mx-1">Account</span>
+                </Link>
               </li>
             </ul>
           </div>
+
+          {/* Right Side - Cart and Account */}
+          <div className="hidden md:flex space-x-4">
+            <Link
+              to="/cart"
+              className="text-gray-900 dark:text-white flex items-center space-x-2"
+            >
+              <i className="fas fa-shopping-cart"></i>
+              <span>Cart</span>
+            </Link>
+            <Link
+              to="/account"
+              className="text-gray-900 dark:text-white flex items-center space-x-2"
+            >
+              <i className="fas fa-user"></i>
+              <span>Account</span>
+            </Link>
+          </div>
         </div>
       </nav>
-    </div>
+    </>
   );
 };
 
