@@ -34,12 +34,14 @@ const Products = () => {
 
   return (
     <div className="bg-gray-100 py-12">
-      {showAlert && (
-        <Alert
-          type="success"
-          alertText={` ${productName} is added to the cart`}
-        />
-      )}
+      <div className="fixed bottom-2 left-2">
+        {showAlert && (
+          <Alert
+            type="success"
+            alertText={` ${productName} is added to the cart`}
+          />
+        )}
+      </div>
 
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">

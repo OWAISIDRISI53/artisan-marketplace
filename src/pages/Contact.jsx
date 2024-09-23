@@ -81,19 +81,19 @@ const Contact = () => {
             </p>
             <ul className="space-y-4">
               <li className="text-gray-600">
-                <strong>Address:</strong> 123 Artisan Street, City, Country
+                <strong>Address:</strong> 123 abc Street, Mumbai, India
               </li>
               <li className="text-gray-600">
                 <strong>Email:</strong>{" "}
                 <a
-                  href="mailto:info@artisanmarketplace.com"
+                  href="mailto:idrisiowais05@gmail.com"
                   className="text-blue-500"
                 >
-                  info@artisanmarketplace.com
+                  idrisiowais05@gmail.com
                 </a>
               </li>
               <li className="text-gray-600">
-                <strong>Phone:</strong> +123 456 7890
+                <strong>Phone:</strong> +91932142255
               </li>
               <li className="text-gray-600">
                 <strong>Working Hours:</strong> Mon - Fri, 9:00 AM - 6:00 PM

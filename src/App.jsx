@@ -7,6 +7,9 @@ import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import Signup from "./pages/Signup";
 import Cart from "./pages/Cart";
+import Login from "./pages/Login";
+import Account from "./pages/Account";
+import AboutPage from "./pages/About";
 
 function App() {
   return (
@@ -17,8 +20,11 @@ function App() {
         <Route path="/products" Component={Products} />
         <Route path="/pricing" Component={Pricing} />
         <Route path="/contact" Component={Contact} />
-        <Route path="/signup" Component={Signup} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/cart" Component={Cart} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </Router>
   );

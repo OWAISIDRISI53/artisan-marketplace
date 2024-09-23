@@ -10,8 +10,13 @@ export const CartProvider = ({ children }) => {
     setCart((prevCart) => [...prevCart, product]);
   };
 
+  // Function to remove item by index or id
+  const removeItem = (itemIndex) => {
+    setCart((prevCart) => prevCart.filter((_, index) => index !== itemIndex));
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeItem }}>
       {children}
     </CartContext.Provider>
   );
