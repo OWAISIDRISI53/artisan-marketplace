@@ -7,6 +7,12 @@ import Footer from "../components/Footer"; // Importing Footer component
 const HomePage = () => {
   return (
     <div>
+      <Link
+        to="/chat"
+        className="fixed bottom-5 right-5 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-500 transition duration-300"
+      >
+        <i className="fas fa-comment-alt"></i>
+      </Link>
       {/* Hero Section */}
       <section className="bg-gray-100 py-20">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">

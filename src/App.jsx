@@ -10,6 +10,7 @@ import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Account from "./pages/Account";
 import AboutPage from "./pages/About";
+import ChatBot from "./pages/Chatbot";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/cart" Component={Cart} />
         <Route path="/account" element={<Account />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/chat" element={<ChatBot />} />
       </Routes>
     </Router>
   );
