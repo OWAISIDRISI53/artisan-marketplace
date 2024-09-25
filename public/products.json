@@ -1,60 +1,60 @@
 [
-    {
-      "id": 1,
-      "name": "Handcrafted Necklace",
-      "description": "Beautiful handmade necklace with beads.",
-      "price": "₹2000",
-      "image": "https://picsum.photos/200/300?random=1"
-    },
-    {
-      "id": 2,
-      "name": "Wooden Carving",
-      "description": "Intricate wooden carving made by artisans.",
-      "price": "₹3600",
-      "image": "https://picsum.photos/200/300?random=2"
-    },
-    {
-      "id": 3,
-      "name": "Ceramic Pot",
-      "description": "A lovely handmade ceramic pot.",
-      "price": "₹2400",
-      "image": "https://picsum.photos/200/300?random=3"
-    },
-    {
-      "id": 4,
-      "name": "Leather Wallet",
-      "description": "Durable and stylish leather wallet.",
-      "price": "₹4000",
-      "image": "https://picsum.photos/200/300?random=4"
-    },
-    {
-      "id": 5,
-      "name": "Bamboo Basket",
-      "description": "Eco-friendly bamboo basket for daily use.",
-      "price": "₹1200",
-      "image": "https://picsum.photos/200/300?random=5"
-    },
-    {
-      "id": 6,
-      "name": "Woolen Scarf",
-      "description": "Warm and soft woolen scarf for winter.",
-      "price": "₹1500",
-      "image": "https://picsum.photos/200/300?random=6"
-    },
-    {
-      "id": 7,
-      "name": "Clay Teapot",
-      "description": "Handmade clay teapot for tea lovers.",
-      "price": "₹1800",
-      "image": "https://picsum.photos/200/300?random=7"
-    },
-    {
-      "id": 8,
-      "name": "Glass Vase",
-      "description": "Elegant glass vase for home decor.",
-      "price": "₹2200",
-      "image": "https://picsum.photos/200/300?random=8"
-    },
+  {
+    "id": 1,
+    "name": "Handcrafted Wooden Bowl",
+    "description": "A beautifully carved wooden bowl with intricate patterns, perfect for decor or serving purposes.",
+    "price": "₹2000",
+    "image": "../src/assets/product-1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Handcrafted Wooden Toy Truck",
+    "description": "A handmade wooden toy truck, ideal for children or as a decorative item.",
+    "price": "₹3600",
+    "image": "../src/assets/product-2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Decorative Wooden Bowl with Leaf Design",
+    "description": "A decorative bowl with leaf patterns, designed to enhance your living space.",
+    "price": "₹2400",
+    "image": "../src/assets/product-3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Woven Basket Set",
+    "description": "A set of woven baskets, great for storage and adding a natural touch to your home.",
+    "price": "₹4000",
+    "image": "../src/assets/product-4.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Bamboo Desk Organizer Set",
+    "description": "A set of bamboo desk organizers, perfect for holding stationery and small items.",
+    "price": "₹1200",
+    "image": "../src/assets/product-5.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Handmade Wooden Car Toy",
+    "description": "A handcrafted wooden car, ideal for children or as a collector's item.",
+    "price": "₹1500",
+    "image": "../src/assets/product-6.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Aromatherapy Gift Set",
+    "description": "An aromatherapy gift set with candles and essential oils, perfect for relaxation.",
+    "price": "₹1800",
+    "image": "../src/assets/product-7.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Handcrafted Ceramic Plates",
+    "description": "A set of vibrant ceramic plates with hand-painted designs, great for serving or decor.",
+    "price": "₹2200",
+    "image": "../src/assets/product-8.jpg"
+  },
     {
       "id": 9,
       "name": "Embroidered Cushion Cover",

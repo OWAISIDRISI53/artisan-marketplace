@@ -1,10 +1,27 @@
 import { Link } from "react-router-dom";
-import watchImage from "../assets/watch.jpg";
+import { useEffect, useState } from "react";
+// import watchImage from "../assets/watch.jpg";
 import heroImage from "../assets/hero-image.avif";
 import testimoniesImage from "../assets/testimonials.jpeg";
 import Footer from "../components/Footer"; // Importing Footer component
 
 const HomePage = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("/products.json"); // Adjust the path if needed
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <div>
       <Link
@@ -13,6 +30,7 @@ const HomePage = () => {
       >
         <i className="fas fa-comment-alt"></i>
       </Link>
+
       {/* Hero Section */}
       <section className="bg-gray-100 py-20">
         <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
@@ -59,25 +77,32 @@ const HomePage = () => {
             Featured Products
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
-            {[1, 2, 3, 4].map((item, index) => (
-              <div key={index} className="bg-gray-100 p-6 rounded-lg shadow-lg">
-                <img
-                  className="w-full h-64 object-cover mb-4 rounded-lg"
-                  src={watchImage}
-                  alt={`Product ${item}`}
-                />
-                <h3 className="text-xl font-semibold text-gray-900">
-                  Product Name {item}
-                </h3>
-                <p className="text-gray-700 mb-4">₹{2500 + item * 100}.00</p>
-                <Link
-                  to="/products"
-                  className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-500"
+            {products.slice(0, 4).map(
+              (
+                product // Show only the first 4 products
+              ) => (
+                <div
+                  key={product.id}
+                  className="bg-gray-100 p-6 rounded-lg shadow-lg"
                 >
-                  View Product
-                </Link>
-              </div>
-            ))}
+                  <img
+                    className="w-full h-64 object-cover mb-4 rounded-lg"
+                    src={product.image}
+                    alt={product.name}
+                  />
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {product.name}
+                  </h3>
+                  <p className="text-gray-700 mb-4">{product.price}.00</p>
+                  <Link
+                    to={`/products/${product.id}`} // Link to the product detail page
+                    className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-500"
+                  >
+                    View Product
+                  </Link>
+                </div>
+              )
+            )}
           </div>
         </div>
       </section>
@@ -92,9 +117,7 @@ const HomePage = () => {
             {[1, 2, 3].map((item, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
                 <div className="flex flex-col items-center">
-                  {/* Image */}
                   <img
-                    // src={`https://source.unsplash.com/random/200x200?customer${item}`} // Random image for demonstration
                     src={testimoniesImage}
                     alt={`Customer ${item}`}
                     className="mb-4 w-24 h-24 rounded-full object-cover border-2 border-blue-600"

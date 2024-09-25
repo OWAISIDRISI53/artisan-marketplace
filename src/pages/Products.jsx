@@ -15,8 +15,8 @@ const Products = () => {
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
 
-  const generateRandomImageUrl = (id) => {
-    return `https://picsum.photos/200/300?random=${id}`;
+  const generateRandomImageUrl = (product) => {
+    return `${product.image}`;
   };
 
   const handleAddToCart = (product) => {
@@ -51,7 +51,7 @@ const Products = () => {
           {products.map((product) => (
             <div key={product.id} className="bg-white rounded-lg shadow-lg p-6">
               <img
-                src={generateRandomImageUrl(product.id)}
+                src={generateRandomImageUrl(product)}
                 alt={product.name}
                 className="w-full h-48 object-cover rounded-md mb-4"
               />
