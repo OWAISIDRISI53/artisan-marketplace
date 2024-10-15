@@ -39,7 +39,7 @@ Installation
 
 1. Clone the repository:
 
-git clone https://github.com/yourusername/artisan-marketplace.git
+git clone https://github.com/OWAISIDRISI53/artisan-marketplace.git
 
 
 2. Navigate to the project directory:
